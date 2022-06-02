@@ -1,0 +1,42 @@
+
+      img {
+        width:150px;
+        height:150px;
+        border-radius:150px;
+        border:10px solid #666;
+    
+    }
+a{
+    text-decoration: none;
+}
+.options{
+    margin-left: 10px;
+    color: black;
+}
+
+:root{
+    --primary : #111b54;
+    --light : #fff;
+    --grey : #efefef;
+}
+body{
+    overflow: hidden;
+    font-family: sans-serif;
+    font-family: 300;
+    color : (--primary)
+
+}
+.bg-primary{ background: rgb(20, 60, 134) !important;}
+#sidebar-container{
+    min-height: 100vh;
+}
+
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu{
+    width:18 rem ;
+}
+
+

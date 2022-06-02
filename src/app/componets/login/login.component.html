@@ -1,0 +1,10 @@
+<div class="login">
+    <div class="form">
+      <form [formGroup]="loginForm"  (submit)="autentication()" class="login-form">
+        <span class="material-icons">login</span>
+        <input formControlName="user" type="text" placeholder="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+        <input formControlName="password" type="password" placeholder="password" required />
+        <button>login</button>
+      </form>  
+    </div>
+  </div>

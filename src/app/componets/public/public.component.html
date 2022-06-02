@@ -1,0 +1,20 @@
+
+   
+    
+
+    <h1 class="title">productos disponibles</h1>
+    
+    <div class="container">
+       
+        <div *ngFor="let prod of listProd" class="card">
+            <img src="{{prod.imagen}}">
+           <h4>{{prod.titulo}}</h4>
+           <h4>{{prod.precio}}</h4>
+           <p>{{prod.sinopsis}}</p>
+           <i class="fa-solid fa-cart-shopping"></i>
+            
+        </div>
+        
+
+    </div>
+    

@@ -1,0 +1,89 @@
+<div class="d-flex">
+  <div id="sidebar-container" class="bg-primary">
+    <div class="logo">
+      <h1 class="text-light">panel de control</h1>
+    </div>
+
+    <div class="menu">
+      <a class="d-block text-light p-3" routerLink="/admin"><i class="fa-solid fa-table-list lead"></i>  TABLERO</a>
+      <a class="d-block text-light p-3" routerLink="#"><i class="fa-solid fa-users lead"></i> USUARIOS</a>
+      <a class="d-block  text-light p-3" routerLink=#><i class="fa-solid fa-address-card lead"></i>  PERFIL</a>
+      <a class="d-block  text-light p-3" routerLink="/"><i class="fa-solid fa-store"></i>  TIENDA</a>
+     
+      <a class="d-block  text-light p-3" (click)="closesecion()" routerLink="#"><i class="fa-solid fa-right-from-bracket"></i> CERRAR SECIÓN</a>
+    
+    </div>
+  </div>
+
+  <div class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+     <div class="container-fluid">
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <form class="d-flex" [formGroup]="search" (submit)="obtenerPeli()">
+          <input formControlName="busqueda" class="form-control me-2" type="search" placeholder="Search"
+            aria-label="Search">
+          <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+     
+         
+          
+        </div>
+    </nav>
+  
+   
+    <table class="table">
+      <thead>
+        <tr>
+              
+          <th scope="col">imagen</th>
+         <th scope="col"> id</th>
+          <th scope="col"> titulo </th>
+          <th scope="col"> fecha </th>
+          <th scope="col"> precio </th>
+          <th scope="col"> tipo </th>
+          
+          <th scope="col">sinopsis</th>
+
+          <th><button class="btn btn-dark btn-sm" routerLink="/agregar-peli">NUEVO</button>
+
+          </th>
+
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let prod of listProd">
+          
+          <td scope="row"><img src="{{prod.imagen}}"></td>
+          <td scope="col">{{prod.codigo_prod}}</td>
+          <td scope="row">{{prod.titulo}}</td>
+          <td scope="row">{{prod.fecha}}</td>
+          <td scope="row">{{prod.precio}}$</td>
+          <td scope="row">{{prod.tipo}}</td>
+        
+          <td scope="row">{{prod.sinopsis}}</td>
+          <td>
+            <div class="options">
+              <i (click)="eliminarPeli(prod.codigo_prod)" class="fa-solid fa-trash"></i>
+              <br>
+              <i [routerLink]="['/editar-peli',(prod.codigo_prod)]" class="fa-solid fa-file-pen"></i>
+
+              <li *ngFor="let user of listUsers">
+                <ul>{{user.name}}</ul>
+              </li>
+            </div>
+           
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+  </div>
+
+</div>
+

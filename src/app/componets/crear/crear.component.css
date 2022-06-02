@@ -1,0 +1,15 @@
+.formualrio{
+    text-align: center;
+    
+}
+.titulo{
+    text-align: center;
+    color: white;
+}
+img {
+    width:150px;
+    height:150px;
+    border-radius:150px;
+    border:10px solid #666;
+
+}
